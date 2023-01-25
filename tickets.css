@@ -21,7 +21,6 @@ body {
 }
 
 .tickets-main {
-    outline: 3px solid orange;
     height: 80vh;
     width: 85%;
     margin: auto;
@@ -40,7 +39,7 @@ body {
     align-items: center;
     justify-content: center;
     color: white;
-    border-radius: 4px;
+    border-radius: 10px;
 }
 
 .ticket-title {
@@ -49,58 +48,52 @@ body {
 }
 
 .tickets-perday {
-    outline: 2px solid greenyellow;
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    grid-gap: 15px;
+    justify-items: center;
     align-items: center;
-    gap: 15px;
-    height: 85vh;
+    min-height: 650px;
 }
 
 .tickets-perday > div {
-    outline: 2px solid red;
-    width: 25%;
+    width: 80%;
     height: 500px;
     border-radius: 15px;
 }
 
 .title-day {
-    background-color: #0DDA21;
+    background-color: #3de74e;
     height: 15%;
     width: 100%;
     border-radius: 15px 15px 0 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #FFF;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    color: #fad9c1;
     font-size: 23px;
 }
 
 .title-day.one {
     background-color: #AB00FC;
+    color: #ccfed1;
 }
 
 .title-day.three {
     background-color: #FF6B00;
+    color: #eecaff;
 }
 
 .first-day {
-    background: linear-gradient(45deg,#0000 calc(25%/3), #f8a66c 0 calc(50%/3),
-      #0000 0 calc(250%/3), #f8a66c 0 calc(275%/3),
-      #0000 0),linear-gradient( 45deg,#f8a66c calc(25%/3), #0000 0 calc(50%/3),
-      #f8a66c 0 25%, #0000 0 75%,
-      #f8a66c 0 calc(250%/3), #0000 0 calc(275%/3),
-      #f8a66c 0),
-      linear-gradient(-45deg,#0000 calc(25%/3), #f8a66c 0 calc(50%/3),
-      #0000 0 calc(250%/3), #f8a66c 0 calc(275%/3),
-      #0000 0),linear-gradient(-45deg,#f8a66c calc(25%/3), #0000 0 calc(50%/3),
-      #f8a66c 0 25%, #0000 0 75%,
-      #f8a66c 0 calc(250%/3), #0000 0 calc(275%/3),
-      #f8a66c 0)
-      #e5acff;
-    background-size: 186px 186px;
-    background-position: 0 0, 93px  93px;
+    background-color: #ccfed1;
+}
+
+.second-day {
+    background-color: #fad9c1;
+}
+
+.third-day {
+    background-color: #eecaff;
 }
 
 .tickets-prices {
@@ -110,15 +103,14 @@ body {
     justify-content: center;
     text-align: center;
     height: 85%;
-    border: 1px solid red;
     padding: 15px;
 }
 
 .ticket-info {
     font-size: 20px;
-    outline: 2px solid yellow;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 20px;
     height: 100%;
 }
@@ -134,9 +126,31 @@ body {
     -moz-box-shadow: 4px 5px 0px 0px rgba(0,0,0,0.95);
 }
 
+.btn-tickets.one{
+    border: 1px solid #000;
+    background-color: #ebffed;
+}
+
+.btn-tickets.two{
+    border: 1px solid #000;
+    background-color: #fff5ee;
+}
+
+.btn-tickets.three{
+    border: 1px solid #000;
+    background-color: #f8e9ff;
+}
+
 .btn-tickets:hover {
     cursor: pointer;
     box-shadow: 1px 1px 0px 0px rgba(0,0,0,0.95);
     -webkit-box-shadow: 1px 1px 0px 0px rgba(0,0,0,0.95);
     -moz-box-shadow: 1px 1px 0px 0px rgba(0,0,0,0.95);
+}
+
+@media screen and (max-width: 900px) {
+    .tickets-perday {
+        display: flex;
+        flex-direction: column;
+    }
 }
