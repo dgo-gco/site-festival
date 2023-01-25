@@ -17,27 +17,10 @@
     --yellow-color: #FFF500;
 }
 
-
-/* #background-video {
-    height: 100vh;
-    width: 100vw;
-    object-fit: cover;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: -1;
-    opacity: 0.85;
-    filter: contrast(80%);
-    } */
-
 body{
     background: url(images/pexels-mikky-k-625644.jpg) center / cover no-repeat;
 }
     
-
-
 /* HEADER------------------------------------------------ */
 
 
@@ -78,7 +61,7 @@ nav a{
 
 .left-part{
     display: flex;
-    width: 60%;
+    min-width: 60%;
     justify-content: space-around;
 }
 
@@ -87,7 +70,11 @@ nav a:hover{
     font-size: 35px;
 }
 
-/* TITLE */
+.burgerClass{
+    display: none;
+}
+
+/* TITLE ------------------------------------ */
 
 .title{
     margin: auto;
@@ -107,6 +94,13 @@ nav a:hover{
     -webkit-transform: rotate(8deg);
     -khtml-transform: rotate(8deg);
     -ms-transform: rotate(8deg);
+     background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
 }
 
 .dateTitle{
@@ -124,10 +118,11 @@ nav a:hover{
 }
 
 /* LISTE NAV ----------------------------------------------------  */
+
 .list-nav{
     display: flex;
     justify-content: space-between;
-    width: 60%;
+    width: min(900px, 100%);
     margin: auto;
     margin-top: 5%;
 }
@@ -179,6 +174,13 @@ background-size: 24px 24px;
     align-items: center;
 }
 
+.bloc p{
+    color: white;
+    position: absolute;
+    font-family: 'Dino And Friend Texture 2';
+    font-size: 35px;
+}
+
 .list-nav img{
     width: 250px;
     height: 200px;
@@ -187,28 +189,26 @@ background-size: 24px 24px;
 }
 
 .list-nav img:hover{
-    filter: contrast(60%); 
+    filter: contrast(40%); 
+    width: 300px;
+    height: 250px;
+    border-radius: 10px;
 
 }
 
 /* FOOTER ----------------- */
+
 footer{
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.825);
+    background-color: rgba(0, 0, 0, 0.194);
     height: 80px;
     margin-top: 3.2%;
 }
 
 .logoPartenaire img{
-    width: 60px;
+    width: 70px;
     height: 60px;
 }
-
-/* .sponsors-list{
-    margin: auto;
-    width: 70%;
-    display: flex;
-} */
 
 .logoPartenaire{
     display: flex;
@@ -220,10 +220,10 @@ footer{
 
 .section6{
     overflow: hidden;
-    background-color: white;
-    width:50%;
+    background-color:  rgba(0, 0, 0, 0.194);
+    width:100%;
     margin: auto;
-    height: 90px;
+    height: 80px;
     display: flex;
     justify-content: center;
 }
@@ -248,5 +248,86 @@ footer{
 #logo2{
     gap: 35px;
     display: flex;
+}
 
+/* MEDIA -----------*/
+
+@media(max-width: 760px){
+
+    .left-part{
+        justify-content: flex-end;
+        padding-right: 10px;
+    }
+
+    .burgerClass{
+        display: block;
+    }
+
+    #burger {
+        width:30px;
+        height:4px;
+        background: white;
+        display:inline-block;
+        position:relative;
+        }
+    
+        #burger::before,
+        #burger::after {
+        content:'';
+        width:30px;
+        height:4px;
+        background:white;
+        display:inline-block;
+        position:absolute;
+        transform-origin: center;
+        transition: all 0.3s ease;
+        }
+        #burger::before {
+        top:-7px;
+        }
+        #burger::after {
+        top:7px;
+        }
+    
+        #burger.open {
+        background:transparent;
+        }
+        #burger.open::before {
+        transform: rotate(45deg);
+        top:0;
+        }
+        #burger.open::after {
+        transform: rotate(-45deg);
+        top:0;
+        }
+
+        .navbar {
+            background:rgba(0, 0, 0, 0.783);
+            position: absolute;
+            width:100%;
+            left:0;
+            top:26%;
+            z-index: 1;
+            padding:10px 0;
+            transform:scaleY(0);
+            transform-origin:center top;
+            transition:all 0.4s ease;
+            }
+            .navbar.open {
+            display: block;
+            transform:scaleY(1);
+            padding: 34px;
+            }
+            .navbar li {
+            padding:30px 0;
+            text-align:center;
+            }
+
+            .list-nav{
+                flex-direction: column;
+                align-items: center;
+                gap: 25px;
+            }
+
+        
 }

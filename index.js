@@ -3,9 +3,6 @@ var sliderWidth = slider.offsetWidth;
 var slideList = document.querySelector(".sponsors-list");
 var count = 1;
 var items = slideList.querySelectorAll(".logoPartenaire").length;
-// var prev = document.querySelector(".vg");
-// var next = document.querySelector(".vd");
-// var pause = document.querySelector(".pause");
 
 window.addEventListener('resize', function() {
     sliderWidth = slider.offsetWidth;
@@ -35,15 +32,6 @@ function prevSlide1(){
       }
 }
 
-next.addEventListener("click", function() {
-    nextSlide1();
-});
-  
-prev.addEventListener("click", function() {
-    prevSlide1();
-});
-
-
 let intervalSponsors;
 
     //Making the slider automatic
@@ -57,12 +45,16 @@ let intervalSponsors;
 
     displaySponsors();
 
+// TOOGLE BAR ---------------------------------------$$$$$$$$$$$$$$$$$$$$$
 
-    pause.addEventListener('click', function(){
-        clearInterval(intervalSponsors);
-        if (intervalSponsors){
-            intervalSponsors = null;
-        } else if (!intervalSponsors) {
-            displaySponsors();
-        }
-    })
+
+let link = document.getElementById('link')
+let burger = document.getElementById('burger')
+let ul = document.querySelector('ul')
+
+/* gestionnaire d'événement sur le a#link pour venir changer l'attribution de la classe .open à la ul et au span#burger */
+link.addEventListener('click', function(e) {
+  e.preventDefault()
+  burger.classList.toggle('open')
+  ul.classList.toggle('open')
+})
