@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@500;700&display=swap');
+
+:root {
+    --orange-color: #FF6B00;
+    --violet-color: #AB00FC;
+    --green-color: #0DDA21;
+}
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    height: 100vh;
+    background-image: url(images/VillaMaravillaporTecate.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color: #fff;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 20px;
+}
+h1, h3{
+    text-transform: uppercase;
+}
+/* #festival-main-div {
+    text-align: center;
+    border: 1px solid #fff;
+    width: 200px;
+    height: 80px;
+} */
+.main-div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-areas:
+    "first"
+    "second"
+    "third";
+    gap: 200px;
+    margin-top: 300px;
+}
+.exp-first-div {
+    grid-area: first;
+    display: flex;
+    justify-content: center;
+}
+.div-wrap-one, .div-wrap-two, .div-wrap-three {
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid #fff;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.div-wrap-one {
+    text-align: center;
+    /* border-radius: 10px;
+    padding: 10px;
+    border: 1px solid #fff;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
+    text-transform: uppercase;
+    width: 260px;
+    background:
+    conic-gradient(#0dda21 25%,#0000 0) 0 0/calc(2*100px) calc(100px/9.5),
+    conic-gradient(#0dda21 25%,#0000 0) 0 0/calc(100px/9.5) calc(2*100px),
+    repeating-conic-gradient(#0000 0 25%,#0dda21 0 50%) 
+     100px 0 /calc(2*100px) calc(2*100px),
+    radial-gradient(50% 50%,#ab00fc 98%,#0dda21) 
+     0 0/100px 100px;
+
+}
+.exp-second-div {
+    grid-area: second;
+}
+.div-wrap-two h3 {
+    background-color: var(--violet-color);
+}
+.div-wrap-two {
+    width: 500px;
+    background:
+      radial-gradient(50% 50% at 100% 0,#0dda21 0%  5% ,#ab00fc 6%  15%,#0dda21 16% 25%,#ab00fc 26% 35%,#0dda21 36% 45%,
+       #ab00fc 46% 55%,#0dda21 56% 65%,#ab00fc 66% 75%,#0dda21 76% 85%,#ab00fc 86% 95%,
+       #0000 96%),
+      radial-gradient(50% 50% at 0 100%,#0dda21 0%  5% ,#ab00fc 6%  15%,#0dda21 16% 25%,#ab00fc 26% 35%,#0dda21 36% 45%,
+       #ab00fc 46% 55%,#0dda21 56% 65%,#ab00fc 66% 75%,#0dda21 76% 85%,#ab00fc 86% 95%,
+       #0000 96%),
+      radial-gradient(50% 50%,#0dda21 0%  5% ,#ab00fc 6%  15%,#0dda21 16% 25%,#ab00fc 26% 35%,#0dda21 36% 45%,
+       #ab00fc 46% 55%,#0dda21 56% 65%,#ab00fc 66% 75%,#0dda21 76% 85%,#ab00fc 86% 95%,
+       #0000 96%),
+      radial-gradient(50% 50%,#0dda21 0%  5% ,#ab00fc 6%  15%,#0dda21 16% 25%,#ab00fc 26% 35%,#0dda21 36% 45%,
+       #ab00fc 46% 55%,#0dda21 56% 65%,#ab00fc 66% 75%,#0dda21 76% 85%,#ab00fc 86% 95%,
+       #0000 96%) 100px 100px;
+background-size: 200px 200px;
+background-color: #0dda21;
+}
+.exp-third-div {
+    grid-area: third;
+    border: 1px solid #000;
+}
+.div-wrap-three h3 {
+    background-color: var(--green-color);
+}
+.div-wrap-three {
+    width: 500px;
+    background:
+      conic-gradient(from 135deg,#ff6b00 90deg,#0000 0) 100px calc(100px/2),
+      conic-gradient(from 135deg,#0dda21 90deg,#0000 0),
+      conic-gradient(from 135deg at 50% 0,#ff6b00 90deg,#0000 0) #0dda21;
+background-size: 200px 100px;
+}
+.experience-div {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+button {
+    padding: 5px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    color: #fff;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    cursor: pointer;
+}
+.div-wrap-two button {
+    background: var(--orange-color);
+}
+.div-wrap-three button{
+    background: var(--violet-color) ;
+}
